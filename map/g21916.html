@@ -16,6 +16,15 @@
 
     <div id="map_canvas"></div>
     <script>
+      function setUserName() {
+  let myName = prompt('Please enter your name.');
+  if(!myName) {
+    setUserName();
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = '今日は, ' + myName+'さん';
+  }
+}
     function initMap() {
       var myOptions = {
         zoom: 8,
